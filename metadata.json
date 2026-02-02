@@ -1,0 +1,5 @@
+{
+  "name": "File Flash",
+  "description": "Secure, fast, serverless P2P file transfer using WebRTC. Share files, text, and screens directly between devices.",
+  "requestFramePermissions": []
+}
