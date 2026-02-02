@@ -13,7 +13,8 @@ export interface FileTransferItem {
 }
 
 export interface SignalingMessage {
-  type: 'offer' | 'answer' | 'candidate' | 'ready';
+  type: 'offer' | 'answer' | 'candidate' | 'ready' | 'join' | 'error';
+  room?: string;
   payload?: any;
 }
 

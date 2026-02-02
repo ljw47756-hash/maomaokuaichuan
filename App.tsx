@@ -1,14 +1,13 @@
-"use client";
 import React from 'react';
-import { useP2PStore } from '../store/useP2P';
-import { useLanguageStore } from '../store/useLanguage';
-import { useThemeStore } from '../store/useTheme';
-import { Home } from '../views/Home';
-import { Sender } from '../views/Sender';
-import { Receiver } from '../views/Receiver';
+import { useP2PStore } from './store/useP2P';
+import { useLanguageStore } from './store/useLanguage';
+import { useThemeStore } from './store/useTheme';
+import { Home } from './views/Home';
+import { Sender } from './views/Sender';
+import { Receiver } from './views/Receiver';
 import { Github, Languages, Cat } from 'lucide-react';
 
-export default function ClientPage() {
+export default function App() {
   const { role } = useP2PStore();
   const { language, setLanguage, t } = useLanguageStore();
   const { isDark, toggleTheme } = useThemeStore();
@@ -28,7 +27,7 @@ export default function ClientPage() {
               MAOMAOKUAICHUAN
             </span>
           </div>
-
+          
           <div className="flex items-center gap-4">
             <button
               onClick={toggleTheme}

@@ -4,7 +4,7 @@ import { useLanguageStore } from '../store/useLanguage';
 import { Button } from '../components/ui/Button';
 import { Input } from '../components/ui/Input';
 import { TransferList } from '../components/TransferList';
-import { ArrowLeft, Wifi } from 'lucide-react';
+import { ArrowLeft, Wifi, ShieldCheck } from 'lucide-react';
 
 export const Receiver: React.FC = () => {
   const { status, joinRoom, reset } = useP2PStore();
@@ -58,6 +58,11 @@ export const Receiver: React.FC = () => {
           <div className="flex items-center justify-center gap-3 p-4 bg-green-500/10 text-green-600 dark:text-green-500 rounded-xl border border-green-500/20">
             <Wifi size={20} />
             <span className="font-medium">{t('connected')}</span>
+          </div>
+
+          <div className="flex items-center justify-center gap-2 text-xs text-zinc-500">
+             <ShieldCheck size={14} className="text-green-500" />
+             <span>Encrypted P2P Tunnel</span>
           </div>
           
           <div className="text-center text-zinc-500 text-sm">

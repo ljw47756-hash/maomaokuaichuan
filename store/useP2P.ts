@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { P2PStore, FileTransferItem, ConnectionStatus } from '../types';
-import { p2pService } from '../services/p2p';
+import { p2pService, setP2PStore } from '../services/p2p';
+import { generateUUID } from '../utils';
 
 interface P2PState extends P2PStore {
   setStatus: (status: ConnectionStatus) => void;
@@ -49,7 +50,7 @@ export const useP2PStore = create<P2PState>((set, get) => ({
   })),
 
   sendFile: (rawFile: File) => {
-    const id = crypto.randomUUID();
+    const id = generateUUID();
     const newFile: FileTransferItem = {
       id,
       name: rawFile.name,
@@ -64,3 +65,6 @@ export const useP2PStore = create<P2PState>((set, get) => ({
     p2pService.sendFile(rawFile, id);
   }
 }));
+
+// Inject the store into the service
+setP2PStore(useP2PStore);
