@@ -1,10 +1,11 @@
+"use client";
 import React from 'react';
-import { useP2PStore } from './store/useP2P';
-import { useLanguageStore } from './store/useLanguage';
-import { useThemeStore } from './store/useTheme';
-import { Home } from './views/Home';
-import { Sender } from './views/Sender';
-import { Receiver } from './views/Receiver';
+import { useP2PStore } from '../store/useP2P';
+import { useLanguageStore } from '../store/useLanguage';
+import { useThemeStore } from '../store/useTheme';
+import { Home } from '../views/Home';
+import { Sender } from '../views/Sender';
+import { Receiver } from '../views/Receiver';
 import { Github, Languages, Cat } from 'lucide-react';
 
 export default function App() {
@@ -52,16 +53,4 @@ export default function App() {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 max-w-4xl mx-auto px-4 py-8 w-full flex flex-col">
-        {role === 'idle' && <Home />}
-        {role === 'sender' && <Sender />}
-        {role === 'receiver' && <Receiver />}
-      </main>
-
-      {/* Footer */}
-      <footer className="py-6 text-center text-zinc-500 dark:text-zinc-600 text-sm">
-        <p>© {new Date().getFullYear()} MAOMAOKUAICHUAN. {t('footer')}</p>
-      </footer>
-    </div>
-  );
-}
+      <main className="flex-1
