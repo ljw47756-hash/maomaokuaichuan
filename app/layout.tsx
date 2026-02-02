@@ -1,19 +1,22 @@
-import type { Metadata } from "next";
-// import "../globals.css"; // 如果你没有css文件，这行先注释掉，防止报错
+import './globals.css';
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "File Transfer App",
-  description: "P2P File Transfer",
+  title: 'MaoMao File Flash',
+  description: 'Secure P2P File Transfer',
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
